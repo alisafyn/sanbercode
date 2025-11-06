@@ -23,3 +23,17 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+// ✅ Tambahkan base URL dan header default
+Cypress.Commands.add('apiRequest', (method, endpoint, body = {}, failOnStatusCode = true) => {
+  const baseUrl = 'https://reqres.in/api'
+  const headers = { 'x-api-key': 'reqres-free-v1' } // bisa ganti nama API key
+
+  return cy.request({
+    method,
+    url: `${baseUrl}${endpoint}`,
+    headers,
+    body,
+    failOnStatusCode
+  })
+})
