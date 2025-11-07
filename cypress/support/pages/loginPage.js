@@ -20,7 +20,11 @@ class LoginPage {
   }
 
   getRequiredMessage() {
-    return cy.get('.oxd-input-group__message')
+    return cy.get('.oxd-input-group__message').should('be.visible').click()
+  }
+
+  Getassertionlogin(){
+    cy.url().should('include','inventory')
   }
 
   login(username, password) {

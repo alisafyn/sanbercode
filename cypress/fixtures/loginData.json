@@ -4,8 +4,8 @@
     "password": "admin123"
   },
   "invalidUser": {
-    "username": "wronguser",
-    "password": "wrongpass"
+    "username": "asalasalanuname",
+    "password": "asalasalanpwd"
   },
   "emptyUser": {
     "username": "",

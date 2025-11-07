@@ -27,7 +27,7 @@
 // ✅ Tambahkan base URL dan header default
 Cypress.Commands.add('apiRequest', (method, endpoint, body = {}, failOnStatusCode = true) => {
   const baseUrl = 'https://reqres.in/api'
-  const headers = { 'x-api-key': 'reqres-free-v1' } // bisa ganti nama API key
+  const headers = { 'x-api-key': 'qacourse' } // bisa ganti nama API key
 
   return cy.request({
     method,
