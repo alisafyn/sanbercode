@@ -18,8 +18,7 @@ beforeEach(() => {
 
 
     // Validasi berhasil login
-    cy.url().should('include', '/dashboard');
-    cy.get('h6').should('contain.text', 'Dashboard');
+    LoginPage.verifyLoginSuccess();
   });
 
   it('TC002 - Login dengan username salah', () => {

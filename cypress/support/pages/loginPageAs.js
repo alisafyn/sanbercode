@@ -35,6 +35,12 @@ class LoginPage {
     return cy.get('.orangehrm-login-forgot-header').click();
   }
 
+  //Assertion login succes
+  verifyLoginSuccess() {
+    cy.url().should('include', '/dashboard');
+    cy.get('h6').should('contain.text', 'Dashboard');
+  }
+
   getForgotPasswordEmailField() {
     return cy.get('input[name="username"]');
   }
@@ -47,13 +53,13 @@ class LoginPage {
     return cy.get('button[type="submit"]');
   }
 
- getForgotPasswordSuccessMessage() {
-  return cy.get('.orangehrm-forgot-password-title');
-}
+   getForgotPasswordSuccessMessage() {
+   return cy.get('.orangehrm-forgot-password-title');
+  }
 
-getCancelResetPasswordButton() {
-  return cy.get('button[type="button"]').contains('Cancel');
-}
+    getCancelResetPasswordButton() {
+     return cy.get('button[type="button"]').contains('Cancel');
+  }
 
   // Dashboard
     getDashboardHeader() {
@@ -107,10 +113,6 @@ getCancelResetPasswordButton() {
     return cy.get('.oxd-sidepanel-body').contains('Dashboard');
   }
 
-  // ===== Optional: helper untuk toast / notifications =====
-  getToastMessage() {
-    return cy.get('.oxd-text--toast');
-  }
 }
 
 export default new LoginPage()
